@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.rival.contohaplikasi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -18,18 +19,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnResult : Button
     private lateinit var tvResult : TextView
     private  lateinit var btnResIntent : Button
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-        edtLength = findViewById(R.id.edt_length)
-        edtWidth = findViewById(R.id.edt_width)
-        edtHeight = findViewById(R.id.edt_height)
-        btnResult = findViewById(R.id.btn_result)
-        tvResult = findViewById(R.id.tv_result)
-        btnResIntent = findViewById(R.id.btn_result_intent)
+        edtLength = binding.edtLength
+        edtWidth = binding.edtWidth
+        edtHeight = binding.edtHeight
+        btnResult = binding.btnResult
+        tvResult = binding.tvResult
+        btnResIntent = binding.btnResultIntent
 
         btnResult.setOnClickListener(this)
         btnResIntent.setOnClickListener(this)
